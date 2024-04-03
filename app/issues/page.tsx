@@ -1,10 +1,14 @@
 /** @format */
-
 import { Button } from "@radix-ui/themes";
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
-  return <Button>new Issue</Button>;
+  return (
+    <Button>
+      <Link href="issues/new">New Issue</Link>
+    </Button>
+  );
 };
 
 export default page;
