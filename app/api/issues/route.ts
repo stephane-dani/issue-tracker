@@ -10,20 +10,16 @@ const createIssueSchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
-  // stock the request in a body const
   const body = await request.json();
 
-  // Validate the request
   const validation = createIssueSchema.safeParse(body);
 
-  // If invalid, return 400
   if (!validation.success)
     return NextResponse.json(
       { error: validation.error.errors },
       { status: 400 }
     );
 
-  // Create new user
   const newIssue = await prisma.issue.create({
     data: {
       title: body.title,
@@ -31,6 +27,5 @@ export async function POST(request: NextRequest) {
     },
   });
 
-  // Return new user & 201
   return NextResponse.json(newIssue, { status: 201 });
 }
