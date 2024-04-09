@@ -12,10 +12,11 @@ import { createIssueSchema } from "@/app/validationSchemas";
 import { z } from "zod";
 import ErrorMessage from "@/app/components/ErrorMessage";
 import Spinner from "@/app/components/Spinner";
+import delay from "delay";
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 
-const NewIssuePage = () => {
+const NewIssuePage = async () => {
   const [isSubmitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const {
@@ -38,6 +39,8 @@ const NewIssuePage = () => {
       setError("Unexpected error occured");
     }
   });
+
+  await delay(2000);
 
   return (
     <div className="max-w-xl">
