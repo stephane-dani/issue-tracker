@@ -1,7 +1,6 @@
 /** @format */
-import { Box, Flex, Card } from "@radix-ui/themes";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import { Skeleton } from "@/app/components";
+import { Box, Card, Flex } from "@radix-ui/themes";
 
 const LoadingDetailPage = () => {
   return (
