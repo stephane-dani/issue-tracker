@@ -41,6 +41,7 @@ const IssueForm = async ({ issue }: { issue?: Issue }) => {
       else await axios.post("/api/issues", data);
 
       router.push("/issues");
+      router.refresh();
     } catch (error) {
       setSubmitting(false);
       setError("Unexpected error occured");

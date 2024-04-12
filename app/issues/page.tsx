@@ -4,7 +4,7 @@ import prisma from "@/prisma/client";
 import { Table } from "@radix-ui/themes";
 import IssueActions from "./IssueActions";
 
-const page = async () => {
+const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
 
   return (
@@ -46,4 +46,6 @@ const page = async () => {
   );
 };
 
-export default page;
+export const dynamic = "force-dynamic";
+
+export default IssuesPage;
