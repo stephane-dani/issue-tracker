@@ -1,7 +1,6 @@
 /** @format */
-// import IssueForm from "../_components/IssueForm";
+
 import dynamic from "next/dynamic";
-import NewIssueLoading from "./loading";
 import IssueFormSkeleton from "./loading";
 
 export const IssueForm = dynamic(
