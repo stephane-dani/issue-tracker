@@ -29,7 +29,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
     : undefined;
 
   const orderBy = columns
-    .map((column) => column.value)
+    .map((column) => column.value as string)
     .includes(searchParams.orderBy)
     ? { [searchParams.orderBy]: "asc" }
     : undefined;
